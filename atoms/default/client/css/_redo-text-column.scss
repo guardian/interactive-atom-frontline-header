@@ -1,0 +1,16 @@
+.content__main .content__main-column--interactive {
+  p {
+    font-size: 17px;
+    line-height: 24px;
+  }
+  @include mq(tablet) {
+    max-width: 38.75rem;
+    margin: 0;
+  }
+  @include mq(leftCol) {
+    margin-left: 9.375rem;
+  }
+  @include mq(wide) {
+    margin-left: 14.375rem;
+  }
+}

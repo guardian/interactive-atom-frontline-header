@@ -1,0 +1,50 @@
+
+.uit-share {
+  display: none;
+}
+
+.pt-nav {
+  position: relative;
+  z-index: 10;
+
+  .pt-nav__title a {
+    color: inherit;
+    .back {
+      display: block;
+      font-size: 15px;
+      line-height: 15px;
+      font-family: "Guardian Text Sans Web";
+      position: relative;
+      svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 1px solid currentColor;
+        border-radius: 100%;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-top: -2px;
+        padding: 2px;
+        path {
+          fill: currentColor;
+        }
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      svg {
+        background-color: currentColor;
+        path {
+          fill: #f6f6f6;
+        }
+      }
+    }
+  }
+
+  //  If we're in grid:
+//   margin: 0 -10px;
+//   width: auto;
+//   @include mq(mobileLandscape) {
+//     margin: 0 -20px;
+//   }
+}
