@@ -1,279 +1,323 @@
 // HEADER STYLES HERE
 
 .pt-header {
-  @include mq($from: tablet) {
-      min-height: 300px;
-  }
-  background: $lotf-background;
-  color: $lotf-accent;
+    @include mq($from: tablet) {
+        min-height: 300px;
+    }
+    background: $lotf-background;
+    color: $lotf-accent;
 }
 
+.navButtons {
+    &[data-sheet] {
+      display: none;
+      &.updated {
+        display: block;
+      }
+    }
+  }
+
+
 .pt-nav {
-  @include fs-headline(5);
-  width: 100%;
-  background-color: #FEBA2C;
-  font-size: 32px;
-  line-height: 38px;
-  font-weight: bold;
-  font-family: "GH Guardian Headline";
-  padding-top: 96px;
+    @include fs-headline(5);
+    width: 100%;
+    background-color: #FEBA2C;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: bold;
+    font-family: "GH Guardian Headline";
+    padding-top: 96px;
 
-  @include mq($from: tablet) {
-      font-size: 36px;
-      line-height: 42px;
-      padding-top: 0px;
-  }
+    @include mq($from: tablet) {
+        font-size: 36px;
+        line-height: 42px;
+        padding-top: 0px;
+    }
 
-  .pt-nav__bottom {
-      border-top: 1px solid #b5831c;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .pt-nav__bottom {
+        border-top: 1px solid #b5831c;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-      @include mq($from: tablet) {
-          flex-direction: row;
-      }
+        @include mq($from: tablet) {
+            flex-direction: row;
+        }
 
 
-      .pt-nav__menu-items {
-          padding: 0px 0px;
-          display: flex;
-          flex-direction: row;
-          font-size: 16px;
-          line-height: 22px;
-          font-family: "Guardian Text Sans Web";
-          flex-wrap: wrap;
-          justify-content: center;
+        .pt-nav__menu-items {
+            padding: 0px 0px;
+            display: flex;
+            flex-direction: row;
+            font-size: 16px;
+            line-height: 22px;
+            font-family: "Guardian Text Sans Web";
+            flex-wrap: wrap;
+            justify-content: center;
 
-          a {
-              color: #333;
-              text-decoration: none;
-          }
+            a {
+                color: inherit;
+                text-decoration: none;
+                padding: 1px 5px;
+                display: block;
+            }
 
-          @include mq($from: tablet) {
-              display: flex;
-              font-size: 17px;
-              line-height: 26px;
-              padding: 0px 12px;
-              padding-left: 0px;
-          }
+            .not-on-tablet {
+                display: inline;
+                @include mq(tablet) {
+                    display: none;
+                }
+                @include mq(desktop) {
+                    display: inline;
+                }
+            }
 
-          div {
-              padding: 0px 10px;
-              vertical-align: middle;
-              line-height: 60px;
-              text-align: center;
+            @include mq($from: tablet) {
+                display: flex;
+                font-size: 17px;
+                line-height: 26px;
+                padding: 0px 12px;
+                padding-left: 0px;
+            }
 
-              @include mq($until: tablet) {
-                  font-size: 16px;
-                  line-height: 40px;
-                  padding: 0px 4px;
-                  border: 1px solid #333;
-                  border-radius: 4px;
-                  margin: 3px 3px;
-                  padding-top: 3px;
-              }
+            div {
+                padding: 0px 10px;
+                vertical-align: middle;
+                line-height: 60px;
+                text-align: center;
 
-              @include mq($from: tablet) {
-                  padding: 0px 4px;
-              }
+                @include mq($until: tablet) {
+                    font-size: 16px;
+                    line-height: 40px;
+                    padding: 0px 4px;
+                    border: 1px solid #333;
+                    border-radius: 4px;
+                    margin: 3px 3px;
+                    padding-top: 3px;
+                }
 
-              @include mq($from: desktop) {
-                  padding: 0px 10px;
-              }
+                @include mq($from: tablet) {
+                    padding: 0px 4px;
+                }
 
-              &:hover {
-                  background-color: #cc9608;
-                  text-decoration: none;
-              }
-          }
-      }
-  }
+                @include mq($from: desktop) {
+                    padding: 0px 10px;
+                }
+
+                &:hover {
+                    background-color: #cc9608;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
 
 #dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: $lotf-accent;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: $lotf-accent;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: hidden;
 
-  a {
-      line-height: 24px;
-      text-align: left;
+    a {
+        line-height: 24px;
+        text-align: left;
 
-      &:hover {
-          background-color: #cc9608;
-      }
-  }
+        &:hover {
+            background-color: #cc9608;
+        }
+    }
+    .note {
+        line-height: 18px;
+        font-size: 15px;
+        text-align: left;
+        padding: 0.5em 0.9em;
+        font-weight: normal;
+        color: #333;
+        position: relative;
+        background-color: rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        border-top: 1px solid rgba(0,0,0,0.2);
+        margin-left: -10px;
+        margin-right: -10px;
+        &__inner {
+            display: block;
+            max-width: 150px;
+            @include mq(mobileLandscape) {
+                max-width: none;
+            }
+        }
+    }
 }
 
 .pt-nav__dropdown {
-  position: relative;
-  display: flex;
-  padding-top: 0px !important;
+    position: relative;
+    display: flex;
+    padding-top: 0px !important;
 
-  span {
-      padding-top: 0px;
-  }
+    span {
+        padding-top: 0px;
+    }
 
 
-  &:hover,
-  &:focus,
-  &:active {
-      #dropdown-content  {
-          display: flex;
-          flex-direction: column;
-      }
-  }
+    &:hover,
+    &:focus,
+    &:active {
+        #dropdown-content  {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
-  padding: 12px 4px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 4px;
+    text-decoration: none;
+    display: block;
 }
 
 .pt-nav__top {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-  @include mq($until: tablet) {
-      flex-direction: column-reverse;
-  }
+    @include mq($until: tablet) {
+        flex-direction: column-reverse;
+    }
 }
 
 .pt-nav--right {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto 0;
 
-  img {
-      width: 100px;
-      height: 90px;
-      margin-right: 4px;
+    img {
+        width: 100px;
+        height: 90px;
+        margin-right: 4px;
 
-      @include mq($until: tablet) {
-          width: 95px;
-          height: 80px;
-      }
-  }
+        @include mq($until: tablet) {
+            width: 95px;
+            height: 80px;
+        }
+    }
 
-  @include mq($until: tablet) {
-      justify-content: flex-start;
-      position: absolute;
-      left: 10px;
-      top: 10px;
+    @include mq($until: tablet) {
+        justify-content: flex-start;
+        position: absolute;
+        left: 10px;
+        top: 10px;
 
-  }
+    }
 }
 
 .pt-nav__subhead {
-  @include fs-headline(5);
-  font-size: 17px;
-  line-height: 24px;
-  display: block;
-  font-weight: 200;
+    @include fs-headline(5);
+    font-size: 17px;
+    line-height: 24px;
+    display: block;
+    font-weight: 200;
 
-  @include mq($until: tablet) {
-      font-size: 15px;
-      line-height: 22px;
-  }
+    @include mq($until: tablet) {
+        font-size: 15px;
+        line-height: 22px;
+    }
 }
 
 .pt-nav__title {
-  @include fs-header(5);
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 46px;
-  display: block;
+    @include fs-header(5);
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    display: block;
 
-  @include mq($until: tablet) {
-      font-size: 24px;
-      line-height: 32px;
-  }
+    @include mq($until: tablet) {
+        font-size: 24px;
+        line-height: 32px;
+    }
 }
 
 .pt-header__inner {
-  max-width: 1200px;
-  margin: auto;
-  color: $lotf-accent;
-  box-sizing: border-box;
-  padding: 10px;
-  padding-top: 40px;
-  text-align: left;
+    max-width: 1200px;
+    margin: auto;
+    color: $lotf-accent;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-top: 40px;
+    text-align: left;
 
-  @include mq($from: tablet) {
-      text-align: center;
-      height: auto;
-      padding-top: 60px;
-  }
+    @include mq($from: tablet) {
+        text-align: center;
+        height: auto;
+        padding-top: 60px;
+    }
 
-  @include mq($from: wide) {
-      max-width: 1280px;
-  }
+    @include mq($from: wide) {
+        max-width: 1280px;
+    }
 
 }
 
 .pt-title {
-  @include fs-header(5);
-  font-size: 64px;
-  line-height: 82px;
-  text-align: center;
-  margin-bottom: 12px;
-  width: 60%;
-  margin: 0 auto;
+    @include fs-header(5);
+    font-size: 64px;
+    line-height: 82px;
+    text-align: center;
+    margin-bottom: 12px;
+    width: 60%;
+    margin: 0 auto;
 
-  @include mq($from: tablet) {
-      font-size: 112px;
-      line-height: 100px;
-      font-family: 'Guardian Figures';
-      width: auto;
-  }
+    @include mq($from: tablet) {
+        font-size: 112px;
+        line-height: 100px;
+        font-family: 'Guardian Figures';
+        width: auto;
+    }
 
-  @include mq($from: wide) {
-      font-size: 112px;
-      line-height: 100px;
-  }
+    @include mq($from: wide) {
+        font-size: 112px;
+        line-height: 100px;
+    }
 }
 
 .pt-sf {
-  @include fs-headline(5);
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 10px;
-  text-align: center;
-  font-size: 17px;
-  line-height: 24px;
-  font-weight: 200;
+    @include fs-headline(5);
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 200;
 
-  &:first-of-type {
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-  }
+    &:first-of-type {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
 
-  @include mq($from: tablet) {
-      font-size: 20px;
-      line-height: 28px;
-      max-width: 400px;
-  }
+    @include mq($from: tablet) {
+        font-size: 20px;
+        line-height: 28px;
+        max-width: 400px;
+    }
 
-  span {
-      color: $lotf-accent;
-  }
+    span {
+        color: $lotf-accent;
+    }
 }
 
 .pt-byline {
-  @include fs-bodyCopy(3);
-  @include mq($from: leftCol) {
-      @include fs-bodyCopy(3);
-  }
-  font-style: italic;
-  color: white;
+    @include fs-bodyCopy(3);
+    @include mq($from: leftCol) {
+        @include fs-bodyCopy(3);
+    }
+    font-style: italic;
+    color: white;
 }

@@ -40,8 +40,10 @@
     }
   }
 
+  .pt-nav__dropdown {
+    z-index: 100;
+  }
 
-  // In grid:
 
   &__top,
   &__bottom {
