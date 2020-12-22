@@ -1,0 +1,9 @@
+.navButtons {
+  &[data-sheet] {
+    display: none;
+    &.updated {
+      display: block;
+    }
+  }
+}
+

@@ -1,14 +1,12 @@
 var el = document.createElement('script');
-el.src = '<%= atomPath %>/app.js';
+el.src = '<%= atomPath %>/sheetContent.js';
 document.body.appendChild(el);
 
 
 let frontlineNav = document.querySelector('.frontline-nav');
 if (frontlineNav) {
-  console.log('has-nav');
   const articleEl = document.querySelector('#article');
   const headerEl = document.querySelector('.content__head');
-  console.log(headerEl, articleEl)
   articleEl.insertBefore(frontlineNav, headerEl);
 }
 
